@@ -29,11 +29,14 @@ function ordenarTabla(colIndex) {
 
 // Filtrar por marca
 function filtrarTabla() {
-  const filtro = document.getElementById("filtroMarca").value.toLowerCase();
+  const filtro = document.getElementById("filtroTabla").value.toLowerCase();
   const filas = document.querySelectorAll("#tablaVehiculos tbody tr");
 
   filas.forEach(fila => {
-    const marca = fila.cells[0].innerText.toLowerCase();
-    fila.style.display = marca.includes(filtro) ? "" : "none";
+    const celdas = Array.from(fila.cells);
+    const coincide = celdas.some(celda =>
+      celda.innerText.toLowerCase().includes(filtro)
+    );
+    fila.style.display = coincide ? "" : "none";
   });
 }
