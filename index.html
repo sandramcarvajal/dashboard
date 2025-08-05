@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | Carvajal Urban Luxo</title>
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+
+    <!-- HEADER (ahora va de primero) -->
+    <header class="header">
+      <button class="menu-toggle" id="menu-toggle">
+        &#9776; <!-- Icono de menú -->
+      </button>
+
+      <!-- Menú hamburguesa solo para móvil -->
+      <nav class="mobile-menu hidden">
+        <ul>
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Usuarios</a></li>
+          <li><a href="#">Vehículos</a></li>
+          <li><a href="#">Ventas</a></li>
+          <li><a href="#">Reportes</a></li>
+          <li><a href="#">Configuración</a></li>
+          <li><a href="#">Ayuda</a></li>
+        </ul>
+      </nav>
+
+      <div class="logo-container">
+        <img src="img/favicon.png" alt="Logo de la empresa" class="logo-img">
+        <span class="brand-name">CARVAJAL URBAN LUXO</span>
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar..." />
+      </div>
+      <div class="header-icons">
+        <button>🔔</button>
+        <button>👤</button>
+      </div>
+    </header>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <nav>
+        <ul>
+          <li><a href="#">📊 Dashboard</a></li>
+          <li><a href="#">👥 Usuarios</a></li>
+          <li><a href="#">🚗 Vehículos</a></li>
+          <li><a href="#">💰 Ventas</a></li>
+          <li><a href="#">📈 Reportes</a></li>
+          <li><a href="#">⚙️ Configuración</a></li>
+          <li><a href="#">❓ Ayuda</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main" style="margin: 20px;">
+      <section class="cards">
+        <div class="card">
+          💰 <strong>Ventas hoy:</strong><br>
+          <span style="font-size: 1.5rem;">$739.000.000</span><br>
+          <small>+25% respecto a ayer</small>
+        </div>
+
+        <div class="card">
+          🚗 <strong>Vehículos activos:</strong><br>
+          <span style="font-size: 1.5rem;">47</span><br>
+          <small>+5% este mes</small>
+        </div>
+
+        <div class="card">
+          👥 <strong>Clientes nuevos:</strong><br>
+          <span style="font-size: 1.5rem;">16</span><br>
+          <small>+12% esta semana</small>
+        </div>
+
+        <div class="card">
+          ⭐ <strong>Satisfacción:</strong><br>
+          <span style="font-size: 1.5rem;">92%</span><br>
+          <small>Calidad del servicio</small>
+        </div>
+      </section>
+
+      <section class="tabla-vehiculos">
+        <h2>Lista de Vehículos</h2>
+
+        <input type="text" id="filtroMarca" placeholder="Filtrar por marca..." onkeyup="filtrarTabla()" />
+
+      <div class="tabla-responsiva">  
+        <table id="tablaVehiculos">
+          <thead>
+            <tr>
+              <th onclick="ordenarTabla(0)">ID</th>
+              <th onclick="ordenarTabla(1)">Marca</th>
+              <th onclick="ordenarTabla(2)">Modelo</th>
+              <th onclick="ordenarTabla(3)">Tipo</th>
+              <th onclick="ordenarTabla(4)">Año</th>
+              <th onclick="ordenarTabla(5)">Precio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>AU230TT01</td>
+              <td>Audi</td>
+              <td>TT Coupé</td>
+              <td>Deportivo</td>
+              <td>2024</td>
+              <td>$230.000.000</td>
+            </tr>
+            <tr>
+              <td>BM410M401</td>
+              <td>BMW</td>
+              <td>M4 2024</td>
+              <td>Deportivo</td>
+              <td>2024</td>
+              <td>$410.000.000</td>
+            </tr>
+            <tr>
+              <td>BY099DO01</td>
+              <td>BYD</td>
+              <td>Dolphin</td>
+              <td>Eléctrico</td>
+              <td>2024</td>
+              <td>$99.000.000</td>
+            </tr>
+            <tr>
+              <td>CH260CA01</td>
+              <td>Chevrolet</td>
+              <td>Camaro</td>
+              <td>Deportivo</td>
+              <td>2024</td>
+              <td>$260.000.000</td>
+            </tr>
+            <tr>
+              <td>CH099ON01</td>
+              <td>Chevrolet</td>
+              <td>Onix</td>
+              <td>Gasolina</td>
+              <td>2024</td>
+              <td>$78.900.000</td>
+            </tr>
+            <tr>
+              <td>FO180MU01</td>
+              <td>Ford</td>
+              <td>Mustang</td>
+              <td>Deportivo</td>
+              <td>2024</td>
+              <td>$180.000.000</td>
+            </tr>
+            <tr>
+              <td>FO075EC01</td>
+              <td>Ford</td>
+              <td>Ecosport</td>
+              <td>Gasolina</td>
+              <td>2024</td>
+              <td>$75.000.000</td>
+            </tr>
+            <tr>
+              <td>HY070GR01</td>
+              <td>Hyundai</td>
+              <td>Grand i10</td>
+              <td>Gasolina</td>
+              <td>2024</td>
+              <td>$70.000.000</td>
+            </tr>
+            <tr>
+              <td>KI071RI01</td>
+              <td>Kia</td>
+              <td>Rio</td>
+              <td>Gasolina</td>
+              <td>2024</td>
+              <td>$71.000.000</td>
+            </tr>
+            <tr>
+              <td>MA0722CX01</td>
+              <td>Mazda</td>
+              <td>CX-30</td>
+              <td>Gasolina</td>
+              <td>2024</td>
+              <td>$122.000.000</td>
+            </tr>
+            <tr>
+              <td>ME079A01</td>
+              <td>Mercedes-Benz</td>
+              <td>Clase A</td>
+              <td>Gasolina</td>
+              <td>2024</td>
+              <td>$179.000.000</td>
+            </tr>
+            <tr>
+              <td>ME380EQS01</td>
+              <td>Mercedes-Benz</td>
+              <td>EQS</td>
+              <td>Eléctrico</td>
+              <td>2024</td>
+              <td>$380.000.000</td>
+            </tr>
+            <tr>
+              <td>NI073VE01</td>
+              <td>Nissan</td>
+              <td>Versa</td>
+              <td>Gasolina</td>
+              <td>2024</td>
+              <td>$73.000.000</td>
+            </tr>
+            <tr>
+              <td>RE180KO01</td>
+              <td>Renault</td>
+              <td>Koleos</td>
+              <td>Gasolina</td>
+              <td>2024</td>
+              <td>$180.000.000</td>
+            </tr>
+            <tr>
+              <td>RE079ST01</td>
+              <td>Renault</td>
+              <td>Stepway</td>
+              <td>Gasolina</td>
+              <td>2024</td>
+              <td>$79.000.000</td>
+            </tr>
+            <tr>
+              <td>TE480MS01</td>
+              <td>Tesla</td>
+              <td>Model S</td>
+              <td>Eléctrico</td>
+              <td>2026</td>
+              <td>$480.000.000</td>
+            </tr>
+            <tr>
+              <td>TO082CO01</td>
+              <td>Toyota</td>
+              <td>Corolla</td>
+              <td>Gasolina</td>
+              <td>2024</td>
+              <td>$82.000.000</td>
+            </tr>
+            <tr>
+              <td>TO170SW01</td>
+              <td>Toyota</td>
+              <td>Sw4</td>
+              <td>Gasolina</td>
+              <td>2024</td>
+              <td>$170.000.000</td>
+            </tr>
+            <tr>
+              <td>VO210GO01</td>
+              <td>Volkswagen</td>
+              <td>Golf GTI</td>
+              <td>Deportivo</td>
+              <td>2024</td>
+              <td>$210.000.000</td>
+            </tr>
+            <tr>
+              <td>VO077PO01</td>
+              <td>Volkswagen</td>
+              <td>Polo</td>
+              <td>Gasolina</td>
+              <td>2024</td>
+              <td>$77.000.000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div> <!-- Fin de tabla-responsiva -->
+      </section>
+    </main>
+  </div>
+  
+  <script src="menu.js"></script> 
+
+</body>
+</html>
