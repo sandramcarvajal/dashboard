@@ -139,7 +139,7 @@ body {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: 1fr;
   gap: 1rem;
   margin: 1.5rem 0;
 }
@@ -322,5 +322,12 @@ input#filtroMarca {
 @media screen and (max-width: 600px) {
   table {
     font-size: 14px;
+  }
+}
+
+/* Escritorio: 4 columnas */
+@media (min-width: 1025px) {
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
